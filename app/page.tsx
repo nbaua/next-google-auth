@@ -22,10 +22,7 @@ function page() {
 
   useEffect(() => {
     const setProviders = async () => {
-      //console.log('loading... Providers')
       const response = await getProviders();
-      console.log('loaded... Providers')
-      console.log(response)
       setAuthProviders(response);
     }
     setProviders();
@@ -34,7 +31,6 @@ function page() {
   function handleGoogleSignIn(_provider: any) {
     // console.log(_provider)
     const response = signIn(_provider.id);
-    console.log(response)
   }
 
   return (

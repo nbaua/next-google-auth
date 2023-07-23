@@ -8,8 +8,6 @@ const providerKeys: any = {
     clientSecret: process.env.GOOGLE_CLIENT_SK
 }
 
-// console.log(providerKeys);
-
 const handler = NextAuth({
     providers: [
         GoogleProvider(providerKeys)
