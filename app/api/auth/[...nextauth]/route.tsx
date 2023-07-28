@@ -13,7 +13,7 @@ const handler = NextAuth({
         GoogleProvider(providerKeys)
     ],
 
-    async session({ session }: any) {
+    async session({ session }: any): Promise<any> {
         try {
             const userOnline = await User.findOne({ email: session.user.email })
             session.user.id = userOnline._id.toString();
@@ -35,7 +35,7 @@ const handler = NextAuth({
                     {
                         email: profile.email,
                         username: profile.name.replace(' ', ''),
-                        picture: profile.picture
+                        image: profile.image
                     }
                 )
             }
